@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Ethereal Hiccups</title>
+	<link href="css/styles_rapture.css" rel="stylesheet" type="text/css">
+<meta http-equiv="refresh" content="30">	
+<meta name="description" content="Ethereal Hiccups, Drew Sisk">
+<meta name="author" content="Drew Sisk">
+
+
+ <style>
+       @font-face {
+    font-family: 'hiccups';
+    src: url('fonts/UncannyHiccups-Regular.woff') format('woff'),
+         url('fonts/UncannyHiccups-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+     body {font-family: 'hiccups';}
+
+</style>
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js'></script>
+
+</head>
+
+<body>
+
+<div id= "Content">
+
+
+<div id="mydiv1"><div style="width:20%;height:40%;position:absolute;top:-10%;left:-10%;background-color:#00ff00;border-radius: 25px;display:none;"></div></div>
+<script>
+    const myDiv = document.querySelector("#mydiv1");
+
+const randomLeftValue = Number.parseInt(Math.random() * (100 - 10) + 10);
+const randomTopValue =  Number.parseInt(Math.random() * (100 - 10) + 10);
+const randomWidth =  Number.parseInt(Math.random() * (100 - 10) + 10);
+const randomHeight =  Number.parseInt(Math.random() * (100 - 10) + 10);
+
+
+myDiv.style.top = `${randomLeftValue}%`;
+myDiv.style.left = `${randomTopValue}%`;
+myDiv.style.width = `${randomWidth}%`;
+myDiv.style.height = `${randomHeight}vh`;        
+</script>
+
+<div id="mydiv2">
+    <img id="changeMe2" src="" style="height: 100%; width: 100%; float:left; object-fit:cover;" />
+	
+<script>
+function getRandomImage()
+{
+    var images = [
+
+
+        "images/ai_parrot.gif",
+        "images/ai_eye.gif",
+        "images/ai_hand.gif"
+
+    ];
+    return images[Math.floor(Math.random() * 3)];
+}
+
+$(document).ready(function(){
+    $("#changeMe2").attr('src', getRandomImage());
+});
+</script>
+    </div>
+    
+<script>
+    const myDiv2 = document.querySelector("#mydiv2");
+
+const randomLeftValue2 = Number.parseInt(Math.random() * (80 - 10) + 10);
+const randomTopValue2 =  Number.parseInt(Math.random() * (60 - 10) + 10);
+const randomWidth2 =  Number.parseInt(Math.random() * (30 - 10) + 10);
+const randomHeight2 =  Number.parseInt(Math.random() * (60 - 10) + 10);
+
+
+myDiv2.style.top = `${randomLeftValue2}%`;
+myDiv2.style.left = `${randomTopValue2}%`;
+myDiv2.style.width = `${randomWidth2}%`;
+myDiv2.style.height = `${randomHeight2}vh`;        
+</script>
+    
+<div id="mydiv3"></div>
+    
+<script>
+    const myDiv3 = document.querySelector("#mydiv3");
+
+const randomLeftValue3 = Number.parseInt(Math.random() * (20 - 10) + 10);
+const randomTopValue3 =  Number.parseInt(Math.random() * (20 - 10) + 10);
+const randomWidth3 =  Number.parseInt(Math.random() * (50 - 10) + 10);
+const randomHeight3 =  Number.parseInt(Math.random() * (50 - 10) + 10);
+
+
+myDiv3.style.top = `${randomLeftValue3}%`;
+myDiv3.style.left = `${randomTopValue3}%`;
+myDiv3.style.width = `${randomWidth3}%`;
+myDiv3.style.height = `${randomHeight3}vh`;        
+</script>
+    
+<div style="position:fixed; z-index:2; font-size:5em; color: #ffffff; left:3%; top: 3%;">
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+  <script>
+  function showTime(){
+      var date = new Date();
+      var h = date.getHours(); // 0 - 23
+      var m = date.getMinutes(); // 0 - 59
+      var session = "AM";
+
+      if(h == 0){
+          h = 12;
+      }
+
+      if(h > 12){
+          h = h - 12;
+          session = "PM";
+      }
+
+      h = (h < 10) ? "0" + h : h;
+      m = (m < 10) ? "0" + m : m;
+
+      var time = h + ":" + m + " " + session;
+      document.getElementById("MyClockDisplay").innerText = time;
+      document.getElementById("MyClockDisplay").textContent = time;
+
+      setTimeout(showTime, 1000);
+
+  }
+
+  showTime();
+
+</script>
+    
+<div style="bottom:3%; right:3%; position:fixed; z-index:100; "><div id="changeText" style="color:#ffffff;text-align:right;font-size:1em; ">A</div></div>
+
+<script>
+    var text = ["Gen-2 3346408635, Ethereal whispers dance", "3be5a162-2e44-48a4-bbdd-78e57badc1aa.png", "D", "hiccupping shadows in quiet realms", "E", "F", "Jovial hiccups quietly pulse", "G", "H", "3be5a162-2e44-48a4-bbdd-78e57badc1aa.png", "echoing in hazy twilight", "I", "J", "A hiccup's echo whispers", "K", "L", "a covert dance in silent air", "M", "N", "0", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "3be5a162-2e44-48a4-bbdd-78e57badc1aa.png"];
+var counter = 0;
+var elem = document.getElementById("changeText");
+var inst = setInterval(change, 100);
+
+function change() {
+  elem.innerHTML = text[counter];
+  counter++;
+  if (counter >= text.length) {
+    counter = 0;
+    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+  }
+}
+</script>
+ 
+  
+    
+</div>
+	<div style= "width: 100%; height:100vh; background-color:#ffffff; float:left;">
+	
+	<div id="funky"></div>
+<script src="scripts/funky.min.js"></script>
+<script type="text/javascript">
+	var funk = new funky('funky');
+	funk.on('error', function(e) {
+		console.log(e);
+	});
+	// Add a negative effect
+    funk.effectVerticalFlip(true);
+    funk.effectEdgeDetection(true);
+    funk.effectEdgeDetectionAlt(true)
+
+</script>
+        
+
+		
+		
+
+	</div>
+
+
+</div>	
+</body>
+
+
+
+
+</html>
